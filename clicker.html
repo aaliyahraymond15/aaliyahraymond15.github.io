@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>a clockwork clicker</title>
+  </head>
+
+  <body>
+    <img
+      id="duck"
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSy4X5uYHH4Msgp3QUVMXxCu235mmHTVkdgw&s"
+    />
+    <h1 id="score">score=0</h1>
+  </body>
+</html>
+<script>
+  let score = 0;
+  document.getElementById("duck").addEventListener("click", scoreGoUp);
+
+  function scoreGoUp() {
+    score = score + 1;
+    document.getElementById("score").innerText = score;
+  }
+  //click the <img> tag
+  //to do: click
+  //no score
+  //should have a number
+  //display score on screen
+</script>

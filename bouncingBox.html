@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas id="canvas" height="800" width="900"></canvas>
+  </body>
+</html>
+<script>
+  let canvas = document.getElementById("canvas");
+  setInterval(moveBox, 16);
+  let ctx = canvas.getContext("2d");
+  let x = 15;
+  let y = 15;
+  let directionx = 9;
+  let directiony = 1
+
+  function moveBox() {
+    const context = canvas.getContext("2d");
+    context.clearRect(x, y, 900, 800);
+    x = x + directionx;
+    y = y + directiony;
+    ctx.fillRect(x, y, 50, 50);
+    //if x>800 change direction
+    if (x > 800 ) {
+      directionx = -9;
+    }
+    if (x < -10) {
+      directionx = 9;
+    }
+    if (y > 700) {
+      directiony= -1
+    }
+    if (y < -1) {
+      directiony= 1
+    }
+  }
+</script>
