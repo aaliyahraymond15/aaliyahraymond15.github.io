@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas id="canvas" height="800" width="900"></canvas>
+  </body>
+</html>
+<script>
+  let canvas = document.getElementById("canvas");
+  setInterval(moveBox, 16);
+  let ctx = canvas.getContext("2d");
+  const context = canvas.getContext("2d");
+  let x = [];
+  let y = [];
+  let directionx = [];
+  let directiony = [];
+for (var i = 0; i<100; i = i + 1){
+  x.push(Math.random()*10+120)
+  y.push(Math.random()*50+50)
+  directionx.push(Math.random()*10-5)
+  directiony.push(Math.random()*10-5)
+}
+  function moveBox() {
+     context.clearRect(0, 0, 900, 800);
+    for (var i = 0; i < 100; i = i + 1) {
+      ctx.fillRect(x[i], y[i], 50, 50);
+      x[i] = x[i] + directionx[i];
+      y[i] = y[i] + directiony[i];
+       //if x>800 change direction
+    if (x[i] > 800) {
+      directionx[i] = -directionx[i] ;
+    }
+    if (x[i] < -10) {
+      directionx[i] = -directionx[i] ;
+    }
+    if (y[i] > 700) {
+      directiony[i] = -directiony[i] ;
+    }
+    if (y[i] < -1) {
+      directiony[i] = -directiony[i] 
+    }
+    }
+   
+  }
+</script>
